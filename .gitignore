@@ -1,0 +1,28 @@
+#Ignore build and dependency file
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+#Ignore IDE-specific files(eclipse)
+.classpath
+.project
+.settings/
+*.log
+*.launch
+*.err
+
+
+#Ignore test reports and screenshots
+/test-output/
+/Screenshot/
+ExtentReport/
+*.html
+
+#Ignore compiled and temporary files
+/bin/
+*.swp
+*.DS_Store
+Thumbs.db
+
