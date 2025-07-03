@@ -16,7 +16,7 @@
 
 #Ignore test reports and screenshots
 /test-output/
-/Screenshot/
+Screenshot/
 ExtentReport/
 *.html
 
