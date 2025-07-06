@@ -2,7 +2,7 @@ pipeline{
 	agent any
 	
 	tools{
-		maven 'maven-3.9.10'
+		maven 'Maven-3.9.10'
 	}
 	
 	stages{
@@ -35,7 +35,7 @@ pipeline{
 	
 	post{
 		always{
-			archiveArtifacts artifacts: '**src/test/resources/ExtentReport/*.html', fingerprint:true,
+			archiveArtifacts artifacts: '**src/test/resources/ExtentReport/*.html', fingerprint:true
 			junit 'target/surefire-reports/*.xml'
 		}
 	}
