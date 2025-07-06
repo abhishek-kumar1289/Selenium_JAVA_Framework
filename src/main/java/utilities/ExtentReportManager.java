@@ -35,7 +35,7 @@ public class ExtentReportManager {
 
 			extent = new ExtentReports();
 			extent.attachReporter(spark); //used to attach the report to the path given above
-			
+			 
 			// Adding system information
 			extent.setSystemInfo("Operating System", System.getProperty("os.name"));
 			extent.setSystemInfo("Java version", System.getProperty("java.version"));

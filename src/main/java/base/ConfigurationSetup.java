@@ -14,7 +14,7 @@ public class ConfigurationSetup {
 	public void configSetup() {
 		prop = new Properties();
 		try {
-		FileInputStream file = new FileInputStream("src/main/resources/config.properties" );
+		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties" );
 		prop.load(file);
 		}catch(IOException e) {
 			e.printStackTrace();

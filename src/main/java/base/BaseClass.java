@@ -4,7 +4,9 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -33,13 +35,29 @@ public class BaseClass extends ConfigurationSetup {
 			 * From selenium 4 we don't need to explicit mention driver path, directly it
 			 * will take path
 			 */
+			
+			ChromeOptions chromeOption = new ChromeOptions();
+			chromeOption.addArguments("--headless"); //Used to run without seeing browser
+			chromeOption.addArguments("--disable-gpu"); 
+			chromeOption.addArguments("--no-sandbox"); //Disabling security feature of browser
+			chromeOption.addArguments("--disable-notification");
+			chromeOption.addArguments("--disable-dev-shm-usage"); //To prevent out of memory for certain environments		
+			
+			
 			// driver = new ChromeDriver();
-			driver.set(new ChromeDriver()); // This way is used because of threadLocal we have used
+			driver.set(new ChromeDriver(chromeOption)); // This way is used because of threadLocal we have used
 			ExtentReportManager.registerDriver(getDriver());
 
 		} else if (browserName.equalsIgnoreCase("edge")) {
+			
+			EdgeOptions edgeOption = new EdgeOptions();
+			edgeOption.addArguments("--headless");
+			edgeOption.addArguments("--disable-gpu");
+			edgeOption.addArguments("--no-sandbox");
+			edgeOption.addArguments("disable-dev-shm-usage");
+			edgeOption.addArguments("--disable-notification");
 
-			driver.set(new EdgeDriver());
+			driver.set(new EdgeDriver(edgeOption));
 			ExtentReportManager.registerDriver(getDriver());
 		} else {
 
