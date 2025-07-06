@@ -15,7 +15,7 @@ public class launchApplication extends BaseClass{
 	  assert title.equals("Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in"):"Title doesn't matched "+title;
 	  ExtentReportManager.logStep("Title is correctly matched: "+ title);
 	  System.out.println("Title matches");
-	  ExtentReportManager.logFailure(getDriver(), "Checking log failure colour", title);
+	  ExtentReportManager.logStepWithScreenshot(getDriver(), "Checking log failure colour", title);
 	  
   }
 }

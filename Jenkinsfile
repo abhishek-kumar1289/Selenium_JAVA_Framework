@@ -27,7 +27,7 @@ pipeline{
 				publishHTML(target:[
 					reportDir:'src/test/resources/ExtentReport',
 					reportFiles: 'ExtentReport.html',
-					reportNames: 'Extent Spark Report'
+					reportTitles: 'Extent Spark Report'
 				])
 			}
 		}
