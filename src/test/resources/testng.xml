@@ -1,10 +1,11 @@
 <?xml version = "1.0" encoding= "UTF-8" ?>
-<suite name="Selenium_Framework" parallel="classes"	thread-count="4">
+<suite name="Selenium_Framework" parallel="classes"
+	thread-count="4">
 	<listeners>
 		<listener class-name="listeners.TestListener"></listener>
 	</listeners>
 	<test name="FrameWorkTest">
-		<Parameter name="browser" value="chrome"></Parameter>
+		<Parameter name="browser" value="edge"></Parameter>
 		<classes>
 			<class name="pageTest.HamburgerMenuTest"></class>
 			<class name="pageTest.launchApplication"></class>
